@@ -16,14 +16,6 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: 'password',
-	database: 'quotes_db'
-});
-
 connection.connect(function (err) {
 	if (err) {
 		console.error('error connecting: ' + err.stack);

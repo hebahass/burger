@@ -1,0 +1,32 @@
+<div>
+		<div id="makeBurger">
+			<form class="form-inline" method='POST' action='/create'>
+				<div class="form-group">
+					<label for="burgerName">Burger Name</label>
+					<input type="text" class="form-control" name='burger_name' id="burgerName">
+				</div>
+			</form>
+		</div>
+</div>
+<div class='row'>
+
+		<div class="burgers">
+			{{#each new}}
+				<div class='burgerDivs'>
+					<form method="POST" action="/devoured/{{id}}">
+						<p>{{burger_name}}</p>
+						<input type="hidden" name="id" value="{{id}}">
+						<button type='submit'>Devour</button>
+					</form>
+				</div>
+			{{/each}}
+		</div>
+
+		<div class="burgers">
+			{{#each devoured}}
+				<div class='burgerDivs'>
+					<p>{{burger_name}}</p>
+				</div>
+			{{/each}}
+		</div>
+	</div>
